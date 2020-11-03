@@ -1,7 +1,7 @@
 ﻿namespace TDDMicroExercises.TirePressureMonitoringSystem
 {
-    public class ISensor
+    public interface ISensor
     {
-        
+        double PopNextPressurePsiValue();
     }
 }
