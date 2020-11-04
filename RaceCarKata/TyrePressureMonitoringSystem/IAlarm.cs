@@ -4,5 +4,7 @@
     {
         void Check();
         bool AlarmOn();
+        long GetAlarmCount();
+        double GetPsiValue();
     }
 }

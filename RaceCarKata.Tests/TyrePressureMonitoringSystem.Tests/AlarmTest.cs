@@ -38,6 +38,20 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem
             Assert.AreEqual(1, alarm.GetAlarmCount());
         }
         
-        
+        [Test]
+        public void GivenATyrePressureWithinThreshold_WhenCheckIsCalled_AlarmIsNotTriggered()
+        {
+            // Given
+            var mockSensor = Substitute.For<ISensor>();
+            var alarm = new Alarm(mockSensor);
+
+            mockSensor.PopNextPressurePsiValue().Returns(18);
+            
+            // When 
+            alarm.Check();
+
+            // Then 
+            Assert.AreEqual(0, alarm.GetAlarmCount());
+        }
     }
 }
